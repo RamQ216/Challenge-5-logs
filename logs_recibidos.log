@@ -1,0 +1,82 @@
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.5:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 101-313-709
+{'id': 'b395e338-e39c-48fa-b1be-18834271de9c', 'timestamp': '2026-05-01T22:18:23.095761', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:23] "POST /logs HTTP/1.1" 200 -
+{'id': '6d260604-365f-471d-bcfd-98723de3e330', 'timestamp': '2026-05-01T22:18:24.126309', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Cierre de sesión exitoso', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:24] "POST /logs HTTP/1.1" 200 -
+{'id': '56bb9937-09b4-4876-8516-8fe379bfaff2', 'timestamp': '2026-05-01T22:18:25.157888', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:25] "POST /logs HTTP/1.1" 200 -
+{'id': '1f2e8ca7-df88-424a-8830-39b3a2b0859a', 'timestamp': '2026-05-01T22:18:26.176181', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Cierre de sesión exitoso', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:26] "POST /logs HTTP/1.1" 200 -
+{'id': 'f9ed19b1-0015-48f5-8c4a-0f65d0692fc8', 'timestamp': '2026-05-01T22:18:27.201289', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:27] "POST /logs HTTP/1.1" 200 -
+{'id': '01f46969-9fa8-4277-9a0d-2408bd49027d', 'timestamp': '2026-05-01T22:18:28.227769', 'service': 'gestor-identidad', 'level': 'CRITICAL', 'message': 'Ataque por fuerza bruta detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:28] "POST /logs HTTP/1.1" 200 -
+{'id': 'a49760b8-e051-4938-8472-41fd3cba1039', 'timestamp': '2026-05-01T22:18:29.241538', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:29] "POST /logs HTTP/1.1" 200 -
+{'id': 'ec020140-8cf8-4fca-b4b0-820656020f47', 'timestamp': '2026-05-01T22:18:30.257288', 'service': 'gestor-identidad', 'level': 'CRITICAL', 'message': 'Ataque por fuerza bruta detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:30] "POST /logs HTTP/1.1" 200 -
+{'id': 'dc5efd97-f611-4b9f-8902-de23c485edca', 'timestamp': '2026-05-01T22:18:31.274541', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:31] "POST /logs HTTP/1.1" 200 -
+{'id': '51c8b8ee-32dc-4f58-9a85-d698014e909f', 'timestamp': '2026-05-01T22:18:32.292022', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:32] "POST /logs HTTP/1.1" 200 -
+{'id': 'a566479c-16df-4815-9061-8e0570dd8bbd', 'timestamp': '2026-05-01T22:18:33.323024', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:33] "POST /logs HTTP/1.1" 200 -
+{'id': 'e8a96d1c-459c-4169-bcf2-18611c35fb87', 'timestamp': '2026-05-01T22:18:34.344776', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:34] "POST /logs HTTP/1.1" 200 -
+{'id': '10e840c8-15ed-4b24-b0b5-e7e03e31ed30', 'timestamp': '2026-05-01T22:18:35.362353', 'service': 'gestor-identidad', 'level': 'CRITICAL', 'message': 'Ataque por fuerza bruta detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:35] "POST /logs HTTP/1.1" 200 -
+{'id': '303ec97e-7392-4d90-9877-63f39aa7ca45', 'timestamp': '2026-05-01T22:18:36.379956', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:36] "POST /logs HTTP/1.1" 200 -
+{'id': 'b47299dc-7803-4583-934d-a2f4597d9678', 'timestamp': '2026-05-01T22:18:37.396204', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:37] "POST /logs HTTP/1.1" 200 -
+{'id': '25e7cb7e-6a46-4709-8fd2-aad492f65513', 'timestamp': '2026-05-01T22:18:38.413001', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:38] "POST /logs HTTP/1.1" 200 -
+{'id': 'ee485754-f2c8-432a-8d24-c460afa4497b', 'timestamp': '2026-05-01T22:18:39.431445', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:39] "POST /logs HTTP/1.1" 200 -
+{'id': '0fe07fb8-143b-4ae3-bc78-7ae8f2da0aa3', 'timestamp': '2026-05-01T22:18:40.443489', 'service': 'gestor-identidad', 'level': 'CRITICAL', 'message': 'Ataque por fuerza bruta detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:40] "POST /logs HTTP/1.1" 200 -
+{'id': '439271c3-2b12-4365-82e3-edc084265f89', 'timestamp': '2026-05-01T22:18:41.471610', 'service': 'gestor-identidad', 'level': 'WARNING', 'message': 'Intento de login fallido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:41] "POST /logs HTTP/1.1" 200 -
+{'id': '8108fff5-5820-4dde-8623-fc7bfd878b57', 'timestamp': '2026-05-01T22:18:42.515080', 'service': 'gestor-identidad', 'level': 'INFO', 'message': 'Usuario inició sesión', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:42] "POST /logs HTTP/1.1" 200 -
+{'id': 'd676d6ab-6298-4002-9404-7f960e950e14', 'timestamp': '2026-05-01T22:18:43.532869', 'service': 'gestor-identidad', 'level': 'CRITICAL', 'message': 'Ataque por fuerza bruta detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:18:43] "POST /logs HTTP/1.1" 200 -
+{'id': '85c418d6-32db-49e9-8b72-9f4b5469ffb8', 'timestamp': '2026-05-01T22:19:05.768326', 'service': 'Pasarela_Pagos', 'level': 'ERROR', 'message': 'Error de comunicación con el procesador de tarjetas', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:05] "POST /logs HTTP/1.1" 200 -
+{'id': 'b8f98ff0-c7cf-4158-a7f4-79f7b7f10048', 'timestamp': '2026-05-01T22:19:06.797631', 'service': 'Pasarela_Pagos', 'level': 'CRITICAL', 'message': 'Detección de posible duplicidad de transacción (Replay Attack)', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:06] "POST /logs HTTP/1.1" 200 -
+{'id': '060a05ce-5bdb-4c22-9a93-04715810e99c', 'timestamp': '2026-05-01T22:19:07.817891', 'service': 'Pasarela_Pagos', 'level': 'CRITICAL', 'message': 'Fallo total de conexión con el nodo de pagos regional', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:07] "POST /logs HTTP/1.1" 200 -
+{'id': 'd349cd08-3d6e-4a9c-9103-4d61a94a2c51', 'timestamp': '2026-05-01T22:19:08.848994', 'service': 'Pasarela_Pagos', 'level': 'WARNING', 'message': 'Monto de transacción excede el límite permitido', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:08] "POST /logs HTTP/1.1" 200 -
+{'id': 'c6fd0745-b338-417a-98a4-e6ce65cd65fb', 'timestamp': '2026-05-01T22:19:09.876756', 'service': 'Pasarela_Pagos', 'level': 'CRITICAL', 'message': 'Detección de posible duplicidad de transacción (Replay Attack)', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:09] "POST /logs HTTP/1.1" 200 -
+{'id': 'a8ffb589-bdee-46b4-a49f-2482bfff5838', 'timestamp': '2026-05-01T22:19:10.899852', 'service': 'Pasarela_Pagos', 'level': 'INFO', 'message': 'Transacción iniciada por el cliente', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:10] "POST /logs HTTP/1.1" 200 -
+{'id': '1d594c7d-ab84-4309-81ca-27255c867120', 'timestamp': '2026-05-01T22:19:11.918901', 'service': 'Pasarela_Pagos', 'level': 'CRITICAL', 'message': 'Fallo total de conexión con el nodo de pagos regional', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:11] "POST /logs HTTP/1.1" 200 -
+{'id': '183ce7c8-e939-49b6-b669-58fd6c5ddaf7', 'timestamp': '2026-05-01T22:19:12.940137', 'service': 'Pasarela_Pagos', 'level': 'INFO', 'message': 'Pago procesado exitosamente - Entidad: Bancard', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:19:12] "POST /logs HTTP/1.1" 200 -
+{'id': '4ec75562-450e-4c19-85c8-9344f94e7ceb', 'timestamp': '2026-05-01T22:21:05.362153', 'service': 'Centinela_Servidor', 'level': 'ERROR', 'message': 'Fallo en el ventilador del CPU - Aumento de temperatura detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:05] "POST /logs HTTP/1.1" 200 -
+{'id': '8b672901-793d-4c26-bc89-b48c9c695980', 'timestamp': '2026-05-01T22:21:06.382048', 'service': 'Centinela_Servidor', 'level': 'WARNING', 'message': 'Espacio en disco bajo en la partición /var/log', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:06] "POST /logs HTTP/1.1" 200 -
+{'id': '53426d38-1407-40ee-a232-9933f35d9da9', 'timestamp': '2026-05-01T22:21:07.417370', 'service': 'Centinela_Servidor', 'level': 'ERROR', 'message': 'Fallo en el ventilador del CPU - Aumento de temperatura detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:07] "POST /logs HTTP/1.1" 200 -
+{'id': '3fc85f2f-0e31-4b5f-8186-18a214b9a17a', 'timestamp': '2026-05-01T22:21:08.434590', 'service': 'Centinela_Servidor', 'level': 'CRITICAL', 'message': 'Error de segmentación en el disco principal - Posible fallo de hardware', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:08] "POST /logs HTTP/1.1" 200 -
+{'id': '7724befa-9ae2-4ee8-8907-1be93f7a15be', 'timestamp': '2026-05-01T22:21:09.466580', 'service': 'Centinela_Servidor', 'level': 'ERROR', 'message': 'Fallo en el ventilador del CPU - Aumento de temperatura detectado', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:09] "POST /logs HTTP/1.1" 200 -
+{'id': 'f0cf0194-4183-4076-a873-93c0adff8a81', 'timestamp': '2026-05-01T22:21:10.490008', 'service': 'Centinela_Servidor', 'level': 'WARNING', 'message': 'Uso de memoria RAM por encima del 75%', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:10] "POST /logs HTTP/1.1" 200 -
+{'id': 'cecce477-6444-41e6-9c61-bcf6e5bf9328', 'timestamp': '2026-05-01T22:21:11.508505', 'service': 'Centinela_Servidor', 'level': 'WARNING', 'message': 'Uso de memoria RAM por encima del 75%', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:11] "POST /logs HTTP/1.1" 200 -
+{'id': 'bb6a0f38-8f75-4e94-b6b1-b7579c14a7fb', 'timestamp': '2026-05-01T22:21:12.535690', 'service': 'Centinela_Servidor', 'level': 'WARNING', 'message': 'Espacio en disco bajo en la partición /var/log', 'metadata': {'runtime': 'python3.10', 'region': 'py-central-1'}}
+127.0.0.1 - - [01/May/2026 19:21:12] "POST /logs HTTP/1.1" 200 -
