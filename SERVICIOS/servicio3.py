@@ -22,5 +22,5 @@ class Centinela_Servidor(LogSimulator):
 
 if __name__ == "__main__":
     URL = "http://127.0.0.1:5000/logs"
-    app = Centinela_Servidor(URL,'admin123')
+    app = Centinela_Servidor(URL,'token-centinela')
     app.simulacion()

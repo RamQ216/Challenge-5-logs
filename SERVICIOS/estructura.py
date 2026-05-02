@@ -10,20 +10,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 token=None
 class LogSimulator:#creamos una clase padre que simulara el envio de logs para las clases hijas
     def __init__(self, ruta, nombre_servicio):
-        self.ruta = ruta
-        self.nombre_servicio = nombre_servicio
-        self.sesion_abierta = requests.Session()
-        self.sesion_abierta.headers.update({
+        self.ruta = ruta#le decimos en que servidor se va conectar
+        self.nombre_servicio = nombre_servicio#el nombre del servicio
+        self.sesion_abierta = requests.Session()#realizamos una conexion persistente
+        self.sesion_abierta.headers.update({#creamos un token especifico para cada servicio
             "Authorization": f"Bearer {token}"
         })
-        self.servicio_run = True
-        # Este diccionario será llenado por las clases hijas
-        self.eventos_disponibles = [] 
+        self.servicio_run = True#indicador de on
+        self.eventos_disponibles = []#diccionario para clases hijas 
 
     def _generar_logs(self):#generamos los logs con el formato json
-        evento = random.choice(self.eventos_disponibles)
+        evento = random.choice(self.eventos_disponibles)#iteramos entr los posibles eventos
         
-        return {
+        return {#nuestro log
             "id": str(uuid.uuid4()),
             "timestamp": datetime.utcnow().isoformat(),
             "service": self.nombre_servicio,
@@ -53,7 +52,7 @@ class LogSimulator:#creamos una clase padre que simulara el envio de logs para l
         except KeyboardInterrupt:
             self.stop()
 
-    def stop(self):
+    def stop(self):#nuestro cierre
         self.servicio_run = False 
         self.sesion_abierta.close()
         logging.info(f"Servicio {self.nombre_servicio} detenido.")
