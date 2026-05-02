@@ -10,11 +10,7 @@ TOKENS_VALIDOS = {
     "token-pagos": "Pasarela_Pagos",
     "token-centinela": "Centinela_Servidor"
 }
-logging.basicConfig(
-    filename='logs_recibidos.log',
-    level=logging.INFO,
-    format='%(message)s' # Guardamos el JSON crudo
-)
+
 
 DB_NAME = 'logs_servidor.db'
 
@@ -72,8 +68,13 @@ def recibir_logs():
         
         # Calculamos la cantidad para el mensaje
         cantidad = len(datos) if isinstance(datos, list) else 1
+
+        if isinstance(datos, list):
+            print(f">>> Recibido BATCH de {len(datos)} logs")
+        else:
+        # Mostramos Service, Level y el Mensaje específico
+            print(f"[{datos.get('service')}] {datos.get('level')}: {datos.get('message')}")
         
-        # --- ESTE ES EL CAMBIO CLAVE: RESPUESTA UNIFICADA ---
         return jsonify({
             "status": "success",
             "message": "Logs procesados exitosamente",
@@ -82,6 +83,7 @@ def recibir_logs():
                 "server_time": datetime.now().isoformat()
             }
         }), 201
+    
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
