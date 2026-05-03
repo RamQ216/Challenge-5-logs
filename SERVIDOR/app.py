@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify
-import pandas
-import logging
 import sqlite3
 from datetime import datetime
 
@@ -15,10 +13,9 @@ TOKENS_VALIDOS = {
 DB_NAME = 'logs_servidor.db'
 
 def guardar_en_base_de_datos(lista_datos):
-    """Maneja la persistencia de uno o varios logs de forma eficiente."""
-    # Si recibimos un solo diccionario, lo convertimos en lista para unificar el proceso
-    if isinstance(lista_datos, dict):
-        lista_datos = [lista_datos]
+   
+    if isinstance(lista_datos, dict):#nos aseguramos que lista de datos ea un diccionario
+        lista_datos = [lista_datos]#metemos en una lista el diccionario para tener un formato definido
         
     try:
         conexion = sqlite3.connect(DB_NAME)
@@ -29,13 +26,13 @@ def guardar_en_base_de_datos(lista_datos):
             VALUES (?, ?, ?, ?, ?)
         '''
 
-        valores = [
+        valores = [#recolectamos los valores iterando en la lista comprimida
             (
-                d.get('timestamp'),
-                datetime.utcnow().isoformat(),
-                d.get('service'),
-                d.get('level'),
-                d.get('message')
+                d.get('timestamp'),#tiempo en que ocurrio el evento
+                datetime.utcnow().isoformat(),#generamos un sello de tiempo exacto de insercion
+                d.get('service'),#el nombre del servicio
+                d.get('level'),#la severidad del reporte
+                d.get('message')#descripcion del error
             ) for d in lista_datos
         ]
         
@@ -48,25 +45,24 @@ def guardar_en_base_de_datos(lista_datos):
 
 @app.route('/logs', methods=['POST'])
 def recibir_logs():
-    auth_header = request.headers.get('Authorization')
-    # 1. Extraer el token del string "Bearer [TOKEN]"
-    if not auth_header or not auth_header.startswith("Bearer "):
-        return jsonify({"error": "Quién sos, bro?"}), 401
+    auth_header = request.headers.get('Authorization')#accedemos al header de autorizacion
+    if not auth_header or not auth_header.startswith("Bearer "):#verificamos si tiene autorizacion
+        return jsonify({"error": "Quién sos, bro?"}), 401#token ivalido
     
-    token_cliente = auth_header.split(" ")[1]
+    token_cliente = auth_header.split(" ")[1]#acedmos al valor del token
 
     # 2. Verificar si la llave existe en el diccionario
     if token_cliente not in TOKENS_VALIDOS:
-        return jsonify({"error": "Quién sos, bro?"}), 401
+        return jsonify({"error": "Quién sos, bro?"}), 401#token invalido
     try:
-        datos = request.get_json()
+        datos = request.get_json()#transforma el logs en un diccionario
         if not datos:
-            return jsonify({"error": "Cuerpo vacío"}), 400
+            return jsonify({"error": "Cuerpo vacío"}), 400#datos invalidos
 
         # Procesamos la inserción (ya sea lista o dict)
         guardar_en_base_de_datos(datos)
         
-        # Calculamos la cantidad para el mensaje
+        # Calculamos la cantidad de datos dentro de las lista sino quiere decir que solo hay un elemento
         cantidad = len(datos) if isinstance(datos, list) else 1
 
         if isinstance(datos, list):
@@ -75,24 +71,23 @@ def recibir_logs():
         # Mostramos Service, Level y el Mensaje específico
             print(f"[{datos.get('service')}] {datos.get('level')}: {datos.get('message')}")
         
-        return jsonify({
+        return jsonify({#transformamos un objeto de python a una respuesta http con formato json
             "status": "success",
             "message": "Logs procesados exitosamente",
             "info": {
                 "cantidad": cantidad,
                 "server_time": datetime.now().isoformat()
             }
-        }), 201
+        }), 201#se procesp correctamente
     
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e)}), 500#erros interno
 
 @app.route('/logs', methods=['GET'])
 def consultar_logs():
-    # 1. Capturar parámetros de la URL
-    # Ejemplo: /logs?service=gestor-identidad&level=ERROR
-    service = request.args.get('service')
+    # 1. Capturar parámetros de la URL despues del ?
+    service = request.args.get('service')#accedemos al parametro de la consulta
     level = request.args.get('level')
     ts_start = request.args.get('timestamp_start')
     ts_end = request.args.get('timestamp_end')
@@ -119,12 +114,11 @@ def consultar_logs():
             params.append(ts_end)
 
         cursor.execute(query, params)
-        rows = cursor.fetchall()
+        rows = cursor.fetchall()#obtenemos los datos de el excute anterior
         
         # 4. Formatear resultados como lista de diccionarios
         resultados = [dict(row) for row in rows]
-        df_query=pandas.read_sql_query(query, conexion)
-        print(df_query)
+    
         conexion.close()
         return jsonify(resultados), 200
 
