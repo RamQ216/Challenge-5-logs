@@ -35,17 +35,17 @@ class LogSimulator:#creamos una clase padre que simulara el envio de logs para l
         }
 
     def envio_logs(self):# definimos a donde queremos enviar,lo que vamos a enviar y el teimpo de espera
-        logs = self._generar_logs()
+        logs = self._generar_logs()#instanciamos el metodo generar logs 
         try:
-            response = self.sesion_abierta.post(self.ruta, json=logs, timeout=5)
-            response.raise_for_status()
-            logging.info(f"Enviado: {logs['id']} | Estado: {response.status_code}")
-        except Exception as e:
+            response = self.sesion_abierta.post(self.ruta, json=logs, timeout=5)#realizamos un envio a el servidor con 5 de espera y el formato json
+            response.raise_for_status()#verificamos el estado 
+            logging.info(f"Enviado: {logs['id']} | Estado: {response.status_code}")#mostramos el id y la repsuta del server
+        except Exception as e:#en caso de error informamos el causante
             logging.error(f"Fallo en el envío: {e}")
 
     def simulacion(self):#enviamos los logs con un intervalo de un segundo
-        logging.info(f"Iniciando simulador: {self.nombre_servicio}")
-        try:
+        logging.info(f"Iniciando simulador: {self.nombre_servicio}")#indicamos que servicio es
+        try:#llamamos a los metodos en un bucle y solo se rompan con un ctl+c
             while self.servicio_run:
                 self.envio_logs()
                 time.sleep(1)
