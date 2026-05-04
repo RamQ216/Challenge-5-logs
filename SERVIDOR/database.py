@@ -1,6 +1,6 @@
 import sqlite3
 
-def inicializar_db():
+def inicializar_db():#generamos la base de datos 
     # Se conecta al archivo (si no existe, lo crea)
     conexion = sqlite3.connect('logs_servidor.db')
     cursor = conexion.cursor()
