@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 import sqlite3
 from datetime import datetime
 
-app = Flask(__name__)
-TOKENS_VALIDOS = {
+app = Flask(__name__)#creamos la aplicacion flask
+TOKENS_VALIDOS = {#genramos los tokens validos
     "token-identidad": "gestor-identidad",
     "token-pagos": "Pasarela_Pagos",
     "token-centinela": "Centinela_Servidor"
