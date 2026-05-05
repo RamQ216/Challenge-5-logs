@@ -1,1 +1,9 @@
 README
+Sistema Distribuido de Simulación y Recolección de LogsEste proyecto implementa una arquitectura Cliente-Servidor para la generación, envío y persistencia de logs de diversos microservicios utilizando Python, Flask y SQLite3.
+🗺️ Mapa Mental del SistemaCapa de Simulación (Clientes)estructura.py: Clase base LogSimulator que gestiona la conexión persistente (requests.Session) y la lógica de envío.servicio1.py, servicio2.py, servicio3.py: Implementaciones específicas (Identidad, Pagos, Sensor) con eventos y tokens propios.Capa de Recepción (API)app.py: Servidor Flask que centraliza la recepción vía POST, valida tokens de seguridad y permite consultas vía GET.Capa de Persistencia (Base de Datos)database.py: Script de inicialización de la base de datos logs_servidor.db.sqlite3: Motor de base de datos relacional para almacenamiento local.🚀 Instalación y Uso RápidoPreparar la Base de 
+
+Datos:Bashpython database.py
+Iniciar el Servidor:Bashpython app.py
+Ejecutar Simuladores (en terminales separadas):Bashpython servicio1.py
+python servicio2.py
+🛠️ Endpoints PrincipalesMétodoRutaDescripciónParámetros (Query)POST/logsRecibe un JSON con el log. Requiere Authorization: Bearer <token>.N/AGET/logsConsulta logs filtrados.service, level, timestamp_start, timestamp_end
